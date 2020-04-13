@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchanges</title>
+</head>
+<body>
+<main role="main" class="container">
+    <table>
+        <thead>
+        <tr>
+            <th> Name</th>
+            <th> Base</th>
+            <th> Sale</th>
+            <th> Buy</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="exchange : ${exchanges}">
+            <td><span th:text="${exchange.getName()}"> Name </span></td>
+            <td><span th:text="${exchange.getBase()}"> Base </span></td>
+            <td><span th:text="${exchange.getBuy()}"> Buy </span></td>
+            <td><span th:text="${exchange.getSale()}"> Sale </span></td>
+        </tr>
+        </tbody>
+    </table>
+    <form action="http://localhost:8081/index">
+        <input type="submit" value="Back to index"/>
+    </form>
+    </form><form action="http://localhost:8081/logout">
+    <input type="submit" value="Logout" />
+</form>
+</main>
+</body>
+</html>
