@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class ExchangeJsonDto {
     private String ccy;
-    private String baseCcy;
+    private String base_ccy;
     private Double buy;
     private Double sale;
 }

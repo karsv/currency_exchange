@@ -3,8 +3,12 @@ package com.example.currencyexchange.controllers;
 import com.example.currencyexchange.dto.UserRegistrationDto;
 import com.example.currencyexchange.service.AuthenticateService;
 import com.example.currencyexchange.service.PersonService;
+import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +25,17 @@ public class UserController {
         this.authenticateService = authenticateService;
     }
 
+    @Autowired
+    private MessageSource messageSource;
+
     @PostMapping("/create")
-    public String createUser(@ModelAttribute(value = "user") UserRegistrationDto user) {
+    public String createUser(@Valid @ModelAttribute(value = "user") UserRegistrationDto user,
+                             BindingResult bindingResult, Model model) {
+        if(bindingResult.hasErrors()){
+            model.addAttribute("error",
+                    messageSource.getMessage(bindingResult.getFieldError(), null));
+            return "error";
+        }
         authenticateService.registrate(user);
         return "index";
     }

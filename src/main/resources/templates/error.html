@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<h1>
+    <span th:text="${error}"> Name </span>
+</h1>
+<form action="http://localhost:8081/index">
+    <input type="submit" value="Back to index"/>
+</form>
+
+<form action="http://localhost:8081/logout">
+    <input type="submit" value="Logout"/>
+</form>
+</body>
+</html>

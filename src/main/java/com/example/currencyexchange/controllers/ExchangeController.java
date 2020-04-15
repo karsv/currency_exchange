@@ -33,7 +33,10 @@ public class ExchangeController {
 
     @GetMapping("/get")
     public String getExchange(Model model) {
-        exchangeModelService.saveAll(getExchangeFromUrl(url));
+        for(ExchangeModel exchangeModel : getExchangeFromUrl(url)){
+            exchangeModelService.save(exchangeModel);
+        }
+//        exchangeModelService.saveAll(getExchangeFromUrl(url));
         model.addAttribute("exchanges", exchangeModelService.getAll());
         return "exchanges";
     }

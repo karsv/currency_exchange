@@ -30,7 +30,7 @@ public class JsonParserImpl implements JsonParser {
         return list.stream().map(dto -> {
             ExchangeModel exchangeModel = new ExchangeModel();
             exchangeModel.setName(dto.getCcy());
-            exchangeModel.setBase(dto.getBaseCcy());
+            exchangeModel.setBase(dto.getBase_ccy());
             exchangeModel.setSale(dto.getSale());
             exchangeModel.setBuy(dto.getBuy());
             return exchangeModel;

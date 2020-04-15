@@ -6,5 +6,7 @@ import java.util.List;
 public interface ExchangeModelService {
     List<ExchangeModel> saveAll(List<ExchangeModel> models);
 
+    ExchangeModel save(ExchangeModel exchangeModel);
+
     List<ExchangeModel> getAll();
 }
