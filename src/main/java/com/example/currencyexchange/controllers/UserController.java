@@ -31,7 +31,7 @@ public class UserController {
     @PostMapping("/create")
     public String createUser(@Valid @ModelAttribute(value = "user") UserRegistrationDto user,
                              BindingResult bindingResult, Model model) {
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             model.addAttribute("error",
                     messageSource.getMessage(bindingResult.getFieldError(), null));
             return "error";

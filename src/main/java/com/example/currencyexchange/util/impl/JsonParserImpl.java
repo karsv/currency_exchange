@@ -4,12 +4,12 @@ import com.example.currencyexchange.dto.ExchangeJsonDto;
 import com.example.currencyexchange.exceptions.DataException;
 import com.example.currencyexchange.model.ExchangeModel;
 import com.example.currencyexchange.util.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
 
 @Component
