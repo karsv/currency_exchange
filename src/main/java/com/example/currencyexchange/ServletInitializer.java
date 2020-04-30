@@ -1,4 +1,4 @@
-package com.example.currency_exchange;
+package com.example.currencyexchange;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
